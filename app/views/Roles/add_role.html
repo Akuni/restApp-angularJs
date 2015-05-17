@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <form class="col-md-6"  ng-submit="myAdd(newName, newProject, newUser)">
+    <h1>New project</h1>
+    <br/>
+
+    <div class="control-group">
+      <label> Name &nbsp;</label>
+      <input type="text" ng-minlength="2" ng-maxlength="50" class="form-control"
+             ng-required="true" ng-model="newName"/>
+    </div>
+    <div>
+      <label> Project &nbsp;</label>
+      <select class="form-control"
+             ng-required="true" ng-model="newProject">
+        <option ng-repeat="project in projects"  ng-model="newProject" value="project.title">{{project.title}}</option>
+        </select>
+    </div>
+
+    <div>
+      <label> User &nbsp;</label>
+      <select class="form-control"
+              ng-required="true" ng-model="newUser">
+        <option ng-repeat="user in users" ng-model="newUser" value="user.name">{{user.name}}</option>
+      </select>
+    </div>
+    <br/>
+    <div class="col-md-9"></div>
+    <button class="btn btn-primary col-md-3">Envoyer</button>
+  </form>
+  <br/>
+</div>

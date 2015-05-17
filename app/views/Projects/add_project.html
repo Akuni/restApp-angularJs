@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <form class="col-md-6"  ng-submit="myAdd(newTitle, newYear, newDescription)">
+    <h1>New project</h1>
+    <br/>
+
+    <div class="control-group">
+      <label> Title &nbsp;</label>
+      <input type="text" ng-minlength="2" ng-maxlength="50" class="form-control"
+             ng-required="true" ng-model="newTitle"/>
+    </div>
+    <div>
+      <label> Year &nbsp;</label>
+      <input type="number" ng-minlength="1" ng-maxlength="4" class="form-control"
+             ng-required="true" ng-model="newYear"/>
+    </div>
+
+    <div>
+      <label> Description &nbsp;</label>
+      <input type="text" class="form-control" ng-model="newDescription"/>
+    </div>
+    <br/>
+    <div class="col-md-9"></div>
+    <button class="btn btn-primary col-md-3">Envoyer</button>
+  </form>
+  <br/>
+</div>

@@ -1,0 +1,40 @@
+<div class="alert alert-{{status}}">
+  {{message}}
+</div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <h3>Roles List</h3>
+
+    <input class="form-control" type="text" ng-model="searchText"/>
+
+  </div>
+</div>
+<br/>
+
+<div class="row">
+
+  <ul class="list-group">
+    <li class="list-group-item personal-li" ng-repeat="role in Roles  | filter:searchText | orderBy:'+name'">
+      <a href="#/roles/:{{role.id}}">
+        {{(role.name == null)?"No name":role.name}}, {{role.UserId}}, {{role.ProjectId}}
+      </a>
+
+      <a ng-click="delete(role.id)">
+      <button class="btn btn-default pull-right right-align-btn">
+        <span class="glyphicon glyphicon-trash pull-right">
+
+      </span>
+      </button>
+      </a>
+
+    </li>
+  </ul>
+  <div class="pull-right" ng-hide="b"><label> No one match ? </label>
+    <a href="#/roles/add/">
+      <div class="btn btn-primary">Add</div>
+    </a>
+  </div>
+</div>
+

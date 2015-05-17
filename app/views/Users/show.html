@@ -1,0 +1,47 @@
+<div class="alert alert-{{status}}" role="alert">
+  <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+  <strong>{{status.substr(0 , 1).toUpperCase().concat(status.substr(1))}}</strong>
+</div>
+
+<div class="row">
+  <div class="col-md-4 display_user">
+    <h3>User's Informations</h3>
+    <p>Name : {{currentUser.name}}</p>
+
+    <p>Surname : {{currentUser.surname}}</p>
+
+    <p>Email : {{currentUser.email = (currentUser.email == null)? "none": currentUser.email}}</p>
+
+    <p>Website : {{currentUser.website = (currentUser.website == null)? "none": currentUser.website}}</p>
+
+    <p>Create profile : {{currentUser.createdAt = (currentUser.createdAt == null)? "none": currentUser.createdAt}}</p>
+
+    <p>Last update : {{currentUser.updatedAt = (currentUser.updatedAt == null)? "none": currentUser.updatedAt}}</p>
+  </div>
+  <div class="col-md-4">
+    <h3>Projects associated</h3>
+    <ul class="list-group">
+      <li class="list-group-item personal-li" ng-repeat="project in projects.data">
+        <a href="#/projects/:{{project.id}}">
+          {{project.title}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h3>Roles</h3>
+    <ul class="list-group">
+      <li class="list-group-item personal-li" ng-repeat="role in roles.data">
+        <a href="#/roles/:{{role.id}}">
+          {{role.name = (role.name == null)?"No name":role.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<a class="pull-right" href="#/users/edit/:{{currentUser.id}}">
+  <div class="btn btn-primary"> Edit</div>
+</a>
+<br/>
+<br/>
+

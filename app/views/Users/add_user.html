@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <form class="col-md-6"  ng-submit="myAdd(newName, newSurname, newEmail, newWebsite)">
+    <h1>Ajout d'utilisateur</h1>
+    <br/>
+
+    <div class="control-group">
+      <label> Firstname &nbsp;</label>
+      <input type="text" ng-minlength="2" ng-maxlength="50" class="form-control" ng-required="true" ng-model="newName"/>
+    </div>
+    <div>
+      <label> Laststname &nbsp;</label>
+      <input type="text" ng-minlength="2" ng-maxlength="50" class="form-control" ng-required="true" ng-model="newSurname"/>
+    </div>
+
+    <div>
+      <label> Email &nbsp;</label>
+      <input type="text" class="form-control" ng-model="newEmail"/>
+    </div>
+    <div>
+      <label> Website &nbsp;</label>
+      <input type="text" class="form-control" ng-model="newWebsite"/>
+    </div>
+    <br/>
+    <div class="col-md-9"></div>
+    <button class="btn btn-primary col-md-3">Envoyer</button>
+  </form>
+  <br/>
+</div>

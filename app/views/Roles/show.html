@@ -1,0 +1,19 @@
+<div class="alert alert-{{status}}" role="alert">
+  <!--<a href="#" class="close" data-dismiss="alert">&times;</a>-->
+  <strong>{{status.substr(0 , 1).toUpperCase().concat(status.substr(1))}}</strong>
+</div>
+{{currentRole}}
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-10 display_user">
+    <p>Name : {{currentRole.name}}</p>
+
+    <p>Create profile : {{currentProject.createdAt = (currentUser.createdAt == null)? "none": currentUser.createdAt}}</p>
+
+    <p>Last update : {{currentProject.updatedAt = (currentUser.updatedAt == null)? "none": currentUser.updatedAt}}</p>
+  </div>
+</div>
+<a href="#/projects/edit/:{{currentProject.id}}">
+  <div class="col-md-2 btn btn-primary pull-right"> Edit</div>
+</a>
+

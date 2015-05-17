@@ -1,0 +1,36 @@
+<div class="alert alert-{{status}}">
+  {{emailFound}}, {{websiteFound}} , {{nameFound}} , {{surnameFound}}
+</div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <form class="col-md-6"
+        ng-submit="edit(currentUser.id, currentUser.name, currentUser.surname, currentUser.email, currentUser.website)">
+    <h1>Ajout d'utilisateur</h1>
+    <br/>
+
+    <div class="control-group">
+      <label> Firstname &nbsp;</label>
+      <input type="text" placeholder="Name" ng-minlength="2" ng-maxlength="50"
+             class="form-control" ng-required="true" ng-model="currentUser.name"/>
+    </div>
+    <div>
+      <label> Laststname &nbsp;</label>
+      <input type="text" placeholder="LastName" ng-minlength="2" ng-maxlength="50"
+             class="form-control" ng-required="true" ng-model="currentUser.surname"/>
+    </div>
+
+    <div>
+      <label> Email &nbsp;</label>
+      <input type="text" placeholder="Email" class="form-control" ng-model="currentUser.email"/>
+    </div>
+    <div>
+      <label> Website &nbsp;</label>
+      <input type="text" placeholder="Website" class="form-control" ng-model="currentUser.website" />
+    </div>
+    <br/>
+    <div class="col-md-9"></div>
+    <button class="btn btn-primary col-md-3">Envoyer</button>
+  </form>
+  <br/>
+</div>
